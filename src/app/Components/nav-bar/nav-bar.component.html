@@ -1,1 +1,24 @@
-<p>nav-bar works!</p>
+
+<div class="padre" [ngClass]="navbarfixed?'fixed':'nofixed'">
+  <div class="hijo">
+    <nav id="my-first">
+      <ul>
+        <li class="logotype">
+          <a href="#">Axel_Dev</a>
+        </li>
+
+        <li class="burger" (click)="toggleMenu()">
+          <i class="material-icons fa-solid fa-xmark" *ngIf="isMenuOpen"></i>
+          <i class="material-icons fa-solid fa-bars" *ngIf="!isMenuOpen"></i>
+        </li>
+
+        <li class="menu" [class.is-open]="isMenuOpen">
+          <a class="menu-item navigation" >home</a>
+          <a class="menu-item navigation" >about Me</a>
+          <a class="menu-item navigation" >proyects</a>
+          <a class="menu-item navigation" >contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
