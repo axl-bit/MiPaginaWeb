@@ -1,0 +1,46 @@
+*{
+  padding: 2%;
+  color: white;
+	font-family: 'Roboto', sans-serif;
+}
+.contenedor {
+	width: 80%;
+	max-width: 1080px;
+	margin: 20px auto;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+
+	grid-template-areas:
+             "header header header"
+						 "contenido contenido sidebar"
+						 "widget-1 widget-1 widget-1"
+}
+
+.contenedor .header {
+	grid-area: header;
+}
+
+.contenedor .contenido {
+	grid-area: contenido;
+}
+
+.contenedor .sidebar {
+  grid-area: sidebar;
+}
+
+.contenedor .widget-1 {
+  grid-area: widget-1;
+}
+
+@media screen and (max-width: 768px){
+	.contenedor {
+		grid-template-areas:
+             "header header header"
+             "sidebar sidebar sidebar"
+						 "contenido contenido contenido"
+						 "widget-1 widget-1 widget-1"
+	}
+}
