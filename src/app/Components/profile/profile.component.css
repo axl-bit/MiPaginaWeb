@@ -4,7 +4,7 @@
 	font-family: 'Roboto', sans-serif;
 }
 .contenedor {
-	width: 80%;
+	width: 90%;
 	max-width: 1080px;
 	margin: 20px auto;
 	display: grid;
@@ -14,26 +14,86 @@
 
 
 	grid-template-areas:
-             "header header header"
+             "header header sidebar"
 						 "contenido contenido sidebar"
 						 "widget-1 widget-1 widget-1"
 }
 
 .contenedor .header {
+  border-radius: 17px;
+  background: #4ee9bb86;
 	grid-area: header;
 }
 
 .contenedor .contenido {
+  border-radius: 17px;
+  background: #4ee9bb86;
 	grid-area: contenido;
 }
 
 .contenedor .sidebar {
+  border-radius: 17px;
+  background: #4ee9bb86;
   grid-area: sidebar;
 }
 
 .contenedor .widget-1 {
+  border-radius: 17px;
+  background: #4ee9bb86;
   grid-area: widget-1;
 }
+
+/* slider infinito */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 20s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+/**/
 
 @media screen and (max-width: 768px){
 	.contenedor {
