@@ -1,7 +1,9 @@
 *{
-  padding: 2%;
+  padding: 0px;
+  margin: 0;
   color: white;
 	font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 .contenedor {
 	width: 90%;
@@ -17,40 +19,39 @@
              "header header sidebar"
 						 "contenido contenido sidebar"
 						 "widget-1 widget-1 widget-1"
+             "widget-2 widget-2 widget-2"
 }
 
 .contenedor .header {
+  text-align: center;
+  padding: 10px;
   border-radius: 17px;
   background: #4ee9bb86;
 	grid-area: header;
 }
 
 .contenedor .contenido {
+  padding: 10px;
   border-radius: 17px;
   background: #4ee9bb86;
 	grid-area: contenido;
 }
 
 .contenedor .sidebar {
+  padding: 10px;
   border-radius: 17px;
   background: #4ee9bb86;
   grid-area: sidebar;
 }
 
 .contenedor .widget-1 {
+  padding: 10px;
   border-radius: 17px;
   background: #4ee9bb86;
   grid-area: widget-1;
 }
 
 /* slider infinito */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 
 @keyframes slide {
   from {
@@ -63,7 +64,7 @@
 
 .logos {
   overflow: hidden;
-  padding: 60px 0;
+  padding: 20px 0;
   white-space: nowrap;
   position: relative;
 }
@@ -78,29 +79,275 @@
   z-index: 2;
 }
 
-
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-
 .logos-slide {
   display: inline-block;
   animation: 20s slide infinite linear;
 }
 
 .logos-slide img {
-  height: 50px;
-  margin: 0 40px;
+  height: 40px;
+  margin: 0 20px;
 }
 
-/**/
+.contenedor .widget-2 {
+  padding: 10px;
+  border-radius: 17px;
+  background: #4ee9bb86;
+  grid-area: widget-2;
+
+  display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(4, auto);
+
+
+	grid-template-areas:
+             "title-wdg2 mail "
+             "type1 mail "
+             "type2 mail "
+             "type3 mail "
+}
+
+/* buttons */
+.btn1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.widget-2 .title-wdg2{
+  grid-area: title-wdg2;
+}
+
+.widget-2 .type1{
+  grid-area: type1;
+}
+
+.widget-2 .type2{
+  grid-area: type2;
+}
+
+.widget-2 .type3{
+  grid-area: type3;
+}
+
+.widget-2 .mail{
+  grid-area: mail;
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::after {
+  content: "SEND";
+  height: 50px;
+  width: 150px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::before {
+  content: "Whatsapp!";
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1 rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
+
+.type2::after {
+  content: "GO!";
+  height: 50px;
+  width: 150px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type2::before {
+  content: "Github";
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1 rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type2:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type2:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
+
+.type3::after {
+  content: "Check Out!";
+  height: 50px;
+  width: 150px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type3::before {
+  content: "LinkedIn";
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1 rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type3:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type3:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
+
+/* mail area */
+
+.mail{
+  padding: 20px;
+  width: 0px;
+}
+
+.mail label{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mail #coments::placeholder{
+  color: white;
+  padding-left: 0.3rem;
+}
+.mail #email::placeholder{
+  color: white;
+  padding-left: 0.3rem;
+}
+
+.mail #coments{
+  color: white;
+  background-color: #69bd6389;
+  border-radius: 0.25rem;
+  border: none;
+}
+.mail #email{
+  color: white;
+  background-color: #69bd6389;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.mail .btnform{
+  background-color: rgb(139, 224, 250);
+  padding: 0.30rem;
+  text-align: center;
+  color: rgba(17, 24, 39, 1);
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+/*responsive part*/
 
 @media screen and (max-width: 768px){
 	.contenedor {
+    max-width: 768px;
+    grid-gap: 15px;
 		grid-template-areas:
              "header header header"
              "sidebar sidebar sidebar"
 						 "contenido contenido contenido"
 						 "widget-1 widget-1 widget-1"
 	}
+
+  .logos-slide img {
+    height: 30px;
+    margin: 0 10px;
+  }
+
 }
