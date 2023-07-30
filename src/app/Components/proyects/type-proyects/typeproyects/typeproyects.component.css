@@ -1,0 +1,22 @@
+*{
+  color:white;
+}
+
+.title{
+  text-align: center;
+}
+
+.types{
+  text-align: center;
+}
+
+button {
+  color:black
+}
+
+
+/* Responsive Area */
+
+@media screen and (max-width: 768px){
+
+}
